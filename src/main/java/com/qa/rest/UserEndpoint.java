@@ -15,8 +15,8 @@ import com.qa.business.service.UserService;
 import com.qa.persistence.domain.User;
 import com.qa.util.JSONUtil;
 
-@Path("/classroom")
-public class ClassroomEndpoint {
+@Path("/user")
+public class UserEndpoint {
 	
 	@Inject
 	private UserService service;

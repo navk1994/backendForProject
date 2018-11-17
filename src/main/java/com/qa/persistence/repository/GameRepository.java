@@ -2,7 +2,7 @@ package com.qa.persistence.repository;
 
 import com.qa.persistence.domain.Game;
 
-public interface TraineeRepository {
+public interface GameRepository {
 
 	String getAllGames();
 	String createGame(String cr);

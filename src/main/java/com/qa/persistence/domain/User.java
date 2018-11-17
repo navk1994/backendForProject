@@ -25,7 +25,7 @@ public class User {
 	
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "gameID")
+	@JoinColumn(name = "userID")
 	private List<Game> games = new ArrayList<>();
 	
 	
@@ -40,8 +40,9 @@ public class User {
 		this.games = games;
 	}
 
-	public User(String username, List<Game> games) {
+	public User(String username, String password, List<Game> games) {
 		this.username = username;
+		this.password = password;
 		this.games = games;
 	}
 

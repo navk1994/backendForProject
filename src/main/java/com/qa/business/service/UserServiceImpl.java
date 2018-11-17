@@ -4,14 +4,14 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.qa.persistence.domain.User;
-import com.qa.persistence.repository.ClassroomRepository;
+import com.qa.persistence.repository.UserRepository;
 
 
 @Default
-public class ClassroomServiceImpl implements UserService {
+public class UserServiceImpl implements UserService {
 
 	@Inject
-	private ClassroomRepository repo;
+	private UserRepository repo;
 
 	public String getAllUsers() {
 		return repo.getAllUsers();
@@ -37,7 +37,7 @@ public class ClassroomServiceImpl implements UserService {
 	}
 
 	
-	public void setRepo(ClassroomRepository repo) {
+	public void setRepo(UserRepository repo) {
 		this.repo = repo;
 	}
 

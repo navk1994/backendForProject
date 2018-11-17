@@ -18,7 +18,7 @@ import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 @Default
-public class GameDBRepository implements TraineeRepository {
+public class GameDBRepository implements GameRepository {
 
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
@@ -27,7 +27,7 @@ public class GameDBRepository implements TraineeRepository {
 	private JSONUtil jsonOb;
 	
 	public String getAllGames() {
-		Query query = manager.createQuery("Select t FROM Trainee t");
+		Query query = manager.createQuery("Select t FROM Game t");
 		Collection<Game> trainees = (Collection<Game>) query.getResultList();
 		return jsonOb.getJSONForObject(trainees);
 	}

@@ -4,14 +4,14 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.qa.persistence.domain.Game;
-import com.qa.persistence.repository.TraineeRepository;
+import com.qa.persistence.repository.GameRepository;
 
 
 @Default
 public class GameServiceImpl implements GameService {
 
 	@Inject
-	private TraineeRepository repo;
+	private GameRepository repo;
 
 	public String getAllGames() {
 		return repo.getAllGames();
@@ -37,7 +37,7 @@ public class GameServiceImpl implements GameService {
 	}
 
 	
-	public void setRepo(TraineeRepository repo) {
+	public void setRepo(GameRepository repo) {
 		this.repo = repo;
 	}
 

@@ -17,7 +17,7 @@ import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 @Default
-public class UserDBRepository implements ClassroomRepository {
+public class UserDBRepository implements UserRepository {
 
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
@@ -26,7 +26,7 @@ public class UserDBRepository implements ClassroomRepository {
 	private JSONUtil jsonOb;
 	
 	public String getAllUsers() {
-		Query query = manager.createQuery("Select cr FROM Classroom cr");
+		Query query = manager.createQuery("Select cr FROM User cr");
 		Collection<User> users = (Collection<User>) query.getResultList();
 		return jsonOb.getJSONForObject(users);
 	}

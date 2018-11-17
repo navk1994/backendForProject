@@ -17,8 +17,8 @@ import com.qa.persistence.domain.User;
 import com.qa.persistence.domain.Game;
 import com.qa.util.JSONUtil;
 
-@Path("/trainee")
-public class TraineeEndpoint {
+@Path("/game")
+public class GameEndpoint {
 	
 	@Inject
 	private GameService service;
@@ -26,39 +26,39 @@ public class TraineeEndpoint {
 	
 	@Inject
 	private JSONUtil jsonOb;
-	
-	@Path("/getAllTrainees")
+		
+	@Path("/getAllGames")
 	@GET
 	@Produces({ "application/json" })
-	public String getAllTrainees() {
+	public String getAllGames() {
 		return service.getAllGames();
 	}
 
-	@Path("/createTrainee")
+	@Path("/createGame")
 	@POST
 	@Produces({ "application/json" })
-	public String addTrainee(String t) {
+	public String addGame(String t) {
 		return service.createGame(t);
 	}
 
-	@Path("/deleteTrainee/{id}")
+	@Path("/deleteGame/{id}")
 	@DELETE
 	@Produces({ "application/json" })
-	public String deleteTrainee(@PathParam("id") Long id) {
+	public String deleteGame(@PathParam("id") Long id) {
 		return service.deleteGame(id);
 	}
 	
-	@Path("/getTrainee/{id}")
+	@Path("/getGame/{id}")
 	@GET
 	@Produces({ "application/json" })
-	public String getTrainee(@PathParam("id") Long id) {
+	public String getGame(@PathParam("id") Long id) {
 		return service.getGame(id);
 	}
 	
-	@Path("/updateTrainee")
+	@Path("/updateGame")
 	@PUT
 	@Produces({ "application/json" })
-	public String updateTrainee(String t) {
+	public String updateGame(String t) {
 		Game tObj= jsonOb.getObjectForJSON(t, Game.class);
 		return service.updateGame(tObj);
 	}

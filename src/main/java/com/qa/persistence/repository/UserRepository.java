@@ -2,7 +2,7 @@ package com.qa.persistence.repository;
 
 import com.qa.persistence.domain.User;
 
-public interface ClassroomRepository {
+public interface UserRepository {
 
 	String getAllUsers();
 	String createUser(String cr);

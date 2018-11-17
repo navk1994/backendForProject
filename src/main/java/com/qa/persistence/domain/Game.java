@@ -32,10 +32,10 @@ public class Game {
 		
 	}
 	
-	public Game(long gameID, long userID, String gameTitle, String gamePlatform, String gameGenre) {
+	public Game(long userID, String gameTitle, String gamePlatform, String gameGenre) {
 		this.gameTitle = gameTitle;
 		this.gamePlatform = gamePlatform;
-		this.gameID = gameID;
+		
 		this.userID = userID;
 		this.gameGenre = gameGenre;
 	}
