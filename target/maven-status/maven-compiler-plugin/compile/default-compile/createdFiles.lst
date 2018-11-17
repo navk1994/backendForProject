@@ -1,0 +1,14 @@
+com\qa\rest\UserEndpoint.class
+com\qa\business\service\GameServiceImpl.class
+com\qa\persistence\repository\GameRepository.class
+com\qa\business\service\UserService.class
+com\qa\persistence\domain\User.class
+com\qa\business\service\GameService.class
+com\qa\persistence\repository\UserRepository.class
+com\qa\business\service\UserServiceImpl.class
+com\qa\rest\GameEndpoint.class
+com\qa\util\JSONUtil.class
+com\qa\persistence\domain\Game.class
+com\qa\persistence\repository\GameDBRepository.class
+com\qa\persistence\repository\UserDBRepository.class
+com\qa\rest\JAXActivator.class
