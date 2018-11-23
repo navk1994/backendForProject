@@ -8,6 +8,7 @@ com\qa\persistence\repository\UserRepository.class
 com\qa\business\service\UserServiceImpl.class
 com\qa\rest\GameEndpoint.class
 com\qa\util\JSONUtil.class
+util\Container.class
 com\qa\persistence\domain\Game.class
 com\qa\persistence\repository\GameDBRepository.class
 com\qa\persistence\repository\UserDBRepository.class
