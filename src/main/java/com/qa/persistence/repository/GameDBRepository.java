@@ -28,29 +28,29 @@ public class GameDBRepository implements GameRepository {
 	
 	public String getAllGames() {
 		Query query = manager.createQuery("Select t FROM Game t");
-		Collection<Game> trainees = (Collection<Game>) query.getResultList();
-		return jsonOb.getJSONForObject(trainees);
+		Collection<Game> games = (Collection<Game>) query.getResultList();
+		return jsonOb.getJSONForObject(games);
 	}
 	
 	@Transactional(REQUIRED)
 	public String createGame(String trainee) {
-		Game aTrainee = jsonOb.getObjectForJSON(trainee, Game.class);
-		manager.persist(aTrainee);
+		Game aGame = jsonOb.getObjectForJSON(trainee, Game.class);
+		manager.persist(aGame);
 		return "{\"message\": \"game has been sucessfully added\"}";
 	}
 	
 	@Transactional(REQUIRED)
 	public String deleteGame(long id) {
-		Game traineeInDB = findGame(id);
-		if (traineeInDB != null) {
-			manager.remove(traineeInDB);
+		Game gameInDB = findGame(id);
+		if (gameInDB != null) {
+			manager.remove(gameInDB);
 		}
 		return "{\"message\": \"game sucessfully deleted\"}";
 	}
 
 	public String getGame(long id) {
-		Game traineeInDB = findGame(id);
-		return jsonOb.getJSONForObject(traineeInDB);
+		Game gameInDB = findGame(id);
+		return jsonOb.getJSONForObject(gameInDB);
 	}
 	
 	private Game findGame(long id)
@@ -59,12 +59,12 @@ public class GameDBRepository implements GameRepository {
 	}
 	
 	@Transactional(REQUIRED)
-	public String updateGame(Game t) {
-		Game traineeInDB = findGame(t.getGameId());
-		traineeInDB.setGameTitle(t.getGameTitle());
-		traineeInDB.setGamePlatform(t.getGamePlatform());
-		traineeInDB.setGameGenre(t.getGameGenre());
-		traineeInDB.setGameId(t.getGameId());
+	public String updateGame(Game g) {
+		Game gameInDB = findGame(g.getGameId());
+		gameInDB.setGameTitle(g.getGameTitle());
+		gameInDB.setGamePlatform(g.getGamePlatform());
+		gameInDB.setGameGenre(g.getGameGenre());
+		gameInDB.setGameId(g.getGameId());
 		return "{\"message\": \"game has been sucessfully updated\"}";
 	}
 	

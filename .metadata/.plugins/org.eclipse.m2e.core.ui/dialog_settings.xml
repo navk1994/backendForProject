@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Naveed\Desktop\TraineeApp-master"/>
 			<item value="E:\Trainee App with working tables\TraineeApp-master"/>
 		</list>
 		<list key="projectNameTemplate">
